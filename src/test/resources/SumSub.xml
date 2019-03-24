@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SumSubSuite" verbose="1">
+
+    <test name="SumSubTest">
+        <classes>
+            <class name="homework1.SumTest"/>
+            <class name="homework1.SubtractionTest"/>
+        </classes>
+    </test>
+
+</suite>

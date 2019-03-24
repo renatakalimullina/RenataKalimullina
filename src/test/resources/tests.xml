@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="CalculatorTests" verbose="1">
+    <suite-files>
+        <suite-file path="MultDiv.xml"/>
+        <suite-file path="SumSub.xml"/>
+    </suite-files>
+
+    <parameter name="positive" value="87"/>
+    <parameter name="negative" value="-56"/>
+
+    <test name="parametrizedTests">
+        <classes>
+            <class name="homework1.ParameterizedTests"/>
+        </classes>
+    </test>
+</suite>

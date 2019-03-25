@@ -8,6 +8,10 @@
     <artifactId>project1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- TODO
+            1. Почему property не используются?
+            2. Почему версия source and target 1.6?
+            -->
     <properties>
         <maven.compiler.source>6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>

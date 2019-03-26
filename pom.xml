@@ -11,10 +11,10 @@
     <!-- TODO
             1. Почему property не используются?
             2. Почему версия source and target 1.6?
-            -->
+            --> Исправлено
     <properties>
-        <maven.compiler.source>6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>

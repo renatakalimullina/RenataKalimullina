@@ -28,6 +28,11 @@
             <type>jar</type>
             <systemPath>${project.basedir}/calculator-1.0.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
     </dependencies>
 
     <build>

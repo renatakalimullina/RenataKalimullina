@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+// TODO Для каждой страницы должен быть свой PageObject
+// TODO Периписать в HW4
 public class POVoid {
 
     private WebDriver driver;
@@ -58,6 +60,7 @@ public class POVoid {
     public void checkFields(Integer numberOfFields, String info) {
 
         field = driver.findElement(By.xpath("//tr["+numberOfFields.toString()+"]/td[@class='category']"));
+        // TODO лишний assert
         assertEquals(field.getText(), info);
     }
 

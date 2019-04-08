@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Objects;
 
+// TODO Обязетельно ли данное наследование?
 public class AddUserMantisTest extends Assert {
 
     @Test
@@ -63,11 +64,13 @@ public class AddUserMantisTest extends Assert {
 
 
         //Check "Create New Account" button
+        // TODO не совсем понятно у какая это кнопка
         driver.findElement(By.xpath("//div[@class='pull-left']"));
 
 
 
         //Click "Create New Account" button
+        // TODO не совсем понятно у какая это кнопка
         driver.findElement(By.xpath("//div[@class='pull-left']")).click();
 
 

@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.Objects;
 
+// TODO Обязетельно ли данное наследование?
 public class MantisTest extends Assert {
     @Test
     public void openMantisBt() {
@@ -48,6 +49,7 @@ public class MantisTest extends Assert {
 
 
         //Assert left side menu
+        // TODO Лучше более точно указывать тег
         driver.findElement(By.xpath("//*[@id='sidebar']"));
 
 

@@ -9,8 +9,10 @@ import org.testng.annotations.Test;
 
 import java.util.Objects;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 // TODO Обязетельно ли данное наследование?
-public class AddUserMantisTest extends Assert {
+public class AddUserMantisTest {
 
     @Test
     public void openMantisBt() {

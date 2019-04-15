@@ -60,7 +60,7 @@ public class POVoid {
     public void checkFields(Integer numberOfFields, String info) {
 
         field = driver.findElement(By.xpath("//tr["+numberOfFields.toString()+"]/td[@class='category']"));
-        // TODO лишний assert
+        // TODO лишний assert - почему лишний? Если надо проверить
         assertEquals(field.getText(), info);
     }
 

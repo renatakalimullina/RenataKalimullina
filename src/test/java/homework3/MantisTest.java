@@ -13,8 +13,10 @@ import org.testng.annotations.Test;
 
 import java.util.Objects;
 
+import static org.testng.AssertJUnit.assertEquals;
 
-public class MantisTest extends Assert {
+
+public class MantisTest {
 
 
     private WebDriver driver;

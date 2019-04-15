@@ -12,8 +12,10 @@ import org.testng.annotations.Test;
 
 import java.util.Objects;
 
+import static org.testng.AssertJUnit.assertEquals;
 
-public class AddUserMantisTest extends Assert {
+
+public class AddUserMantisTest {
 
     private WebDriver driver;
     private POVoid POVoid;

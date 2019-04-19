@@ -209,6 +209,7 @@ public class ViewIssuePage extends AbstractPage{
         return issuesNumber.getText();
     }
 
+    // TODO Зачем в каждом ПО делать метод logout?
     public void logout()
     {
         userInfo.click();

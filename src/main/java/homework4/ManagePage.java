@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ManagePage extends AbstractPage {
 
+    // TODO Должно быть сделанно по аналогии с Меню в LeftSideBarElement
     @FindBy(partialLinkText = "Manage Projects")
     private WebElement manageProjects;
 

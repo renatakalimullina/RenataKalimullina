@@ -70,6 +70,7 @@ public class CreatingProjectPage extends AbstractPage {
 
     public void fillInfo()
     {
+        // TODO не должно быть данных на уровне PageObjects
         projectName.sendKeys("Anything");
 
         projectStatusFirst.click();
@@ -80,6 +81,7 @@ public class CreatingProjectPage extends AbstractPage {
         projectViewStateFirst.click();
         projectViewStateSecond.click();
 
+        // TODO не должно быть данных на уровне PageObjects
         projectDescription.sendKeys("AnythingAnything");
     }
 

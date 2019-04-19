@@ -13,18 +13,23 @@ import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
 
 
+// TODO Зачем используется приоритезация?
+// TODO В задании было сказанно, что это много тестов?
 public class MantisProjectTest {
 
+    // TODO Должно быть в базовом классе
     private WebDriver driver;
     private LoginPage loginPage;
     private ManagePage managePage;
     private CreatingProjectPage creatingProjectPage;
 
+    // TODO Должно быть в базовом классе
     @BeforeSuite(alwaysRun = true)
     public void setUp() {
         ChromeDriverManager.chromedriver().setup();
     }
 
+    // TODO Должно быть в базовом классе
     @BeforeMethod(alwaysRun = true)
     public void initDriver() {
 
@@ -131,6 +136,7 @@ public class MantisProjectTest {
         managePage.logout();
     }
 
+    // TODO Должно быть в базовом классе
     @AfterMethod(alwaysRun = true)
     public void closeDriver() {
 

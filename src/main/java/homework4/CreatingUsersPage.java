@@ -77,6 +77,7 @@ public class CreatingUsersPage extends AbstractPage  {
 
     public void fillInfo()
     {
+        // TODO не должно быть данных на уровне PageObjects
         userNameInfo.sendKeys("someone");
         userRealname.sendKeys("Renata");
         emailField.sendKeys("AnythingAnything@mail.ru");

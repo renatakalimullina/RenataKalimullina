@@ -20,6 +20,7 @@ public class AddUserMantisTest extends BaseClassForTests{
     public void addUser() {
         // Check title
         // TODO Не должно быть захордкоженных данных
+        // Исправлено
         assertEquals(loginPage.getPageTitle(), properties.getProperty("mainTitleName"));
 
         // Login

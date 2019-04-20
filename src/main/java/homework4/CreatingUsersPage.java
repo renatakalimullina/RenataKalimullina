@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static org.testng.AssertJUnit.assertEquals;
-
 public class CreatingUsersPage extends AbstractPage  {
+
+    @FindBy(xpath = "//div[@class='pull-left']")
+    private WebElement newUsers;
+
 
     @FindBy(xpath = "//tr[1]/td[@class='category']")
     private WebElement userName;
@@ -63,26 +65,20 @@ public class CreatingUsersPage extends AbstractPage  {
         super(driver);
     }
 
-    //Так как все asserts должны быть на уровне тестов
-    /*public void checkFields() {
-        assertEquals("Username", userName.getText());
-        assertEquals("Real Name", realName.getText());
-        assertEquals("E-mail", Email.getText());
-        assertEquals("Password", password.getText());
-        assertEquals("Verify Password", verifyPassword.getText());
-        assertEquals("Access Level", accessLevel.getText());
-        assertEquals("Enabled", enabled.getText());
-        assertEquals("Protected", Protected.getText());
-    }*/
-
-    public void fillInfo()
+    public void creatingNewUsers()
     {
-        // TODO не должно быть данных на уровне PageObjects
-        userNameInfo.sendKeys("someone");
-        userRealname.sendKeys("Renata");
-        emailField.sendKeys("AnythingAnything@mail.ru");
-        userPassword.sendKeys("qwerty");
-        userVerifyPassword.sendKeys("qwerty");
+        newUsers.click();
+    }
+
+    // TODO не должно быть данных на уровне PageObjects
+    // Исправлено
+    public void fillInfo(String name, String realName, String email, String password)
+    {
+        userNameInfo.sendKeys(name);
+        userRealname.sendKeys(realName);
+        emailField.sendKeys(email);
+        userPassword.sendKeys(password);
+        userVerifyPassword.sendKeys(password);
 
         userAccessLevelFirst.click();
         userAccessLevelSecond.click();

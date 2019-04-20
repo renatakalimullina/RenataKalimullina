@@ -1,69 +1,32 @@
 package homework4;
 
 import homework4.enums.MenuItem;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
 import static org.testng.AssertJUnit.assertEquals;
+
 
 // TODO Зачем используется приоритезация?
 // TODO В задании было сказанно, что это много тестов?
-public class CreationIssuesTest {
+// Исправлено
+
+public class CreationIssuesTest extends BaseClassForTests{
 
     // TODO Должно быть в базовом классе
-    private WebDriver driver;
-    private LoginPage loginPage;
-    private ViewIssuePage viewIssuePage;
+    //Исправлено все, что должно быть в базвом классе
 
-    // TODO Должно быть в базовом классе
-    @BeforeSuite(alwaysRun = true)
-    public void setUp() {
-        ChromeDriverManager.chromedriver().setup();
-    }
-
-    // TODO Должно быть в базовом классе
-    @BeforeMethod(alwaysRun = true)
-    public void initDriver() {
-
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-
-        //Open test site by URL
-        driver.get("https://mantis.tiulp.in/login_page.php");
-        loginPage = new LoginPage(driver);
-        viewIssuePage = new ViewIssuePage(driver);
-    }
-
-    @Test(priority = 1)
-    public void login() {
+    @Test
+    public void setFilter() {
         // Check title
-        assertEquals(loginPage.getPageTitle(), "MantisBT");
+        assertEquals(loginPage.getPageTitle(), properties.getProperty("mainTitleName"));
 
         // Login
-        loginPage.login("administrator", "rootroot");
+        loginPage.login(properties.getProperty("adminName"), properties.getProperty("adminPassword"));
 
         // Check login
-        assertEquals(driver.getTitle(), "My View - MantisBT");
-        assertEquals(loginPage.getLoggedUser(), "administrator");
-    }
-
-    @Test(priority = 2)
-    public void leftSideBar() {
-        loginPage.login("administrator", "rootroot");
+        assertEquals(driver.getTitle(), properties.getProperty("titleName"));
+        assertEquals(loginPage.getLoggedUser(), properties.getProperty("adminName"));
 
         //Assert left side menu & Click "view_issues" button at the left side menu
-        loginPage.selectMenu(MenuItem.VIEW_ISSUES);
-    }
-
-    @Test(priority = 3)
-    public void filterSelection() {
-
-        loginPage.login("administrator", "rootroot");
         loginPage.selectMenu(MenuItem.VIEW_ISSUES);
 
         //set filter values
@@ -77,78 +40,14 @@ public class CreationIssuesTest {
         viewIssuePage.chooseEndDay();
         viewIssuePage.chooseEndMonth();
         viewIssuePage.chooseEndYear();
-    }
-
-    @Test(priority = 4)
-    public void clickApplyFilter() {
-
-        loginPage.login("administrator", "rootroot");
-        loginPage.selectMenu(MenuItem.VIEW_ISSUES);
-
-        viewIssuePage.setPriority();
-        viewIssuePage.setSeverity();
-        viewIssuePage.setStatus();
-        viewIssuePage.filterByDateSubmitted();
-        viewIssuePage.chooseStartDay();
-        viewIssuePage.chooseStartMonth();
-        viewIssuePage.chooseStartYear();
-        viewIssuePage.chooseEndDay();
-        viewIssuePage.chooseEndMonth();
-        viewIssuePage.chooseEndYear();
 
         //Click Apply Filter
         viewIssuePage.clickApplyFilter();
-    }
-
-    @Test(priority = 5)
-    public void checkResults() {
-        loginPage.login("administrator", "rootroot");
-        loginPage.selectMenu(MenuItem.VIEW_ISSUES);
-        viewIssuePage.setPriority();
-        viewIssuePage.setSeverity();
-        viewIssuePage.setStatus();
-        viewIssuePage.filterByDateSubmitted();
-        viewIssuePage.chooseStartDay();
-        viewIssuePage.chooseStartMonth();
-        viewIssuePage.chooseStartYear();
-        viewIssuePage.chooseEndDay();
-        viewIssuePage.chooseEndMonth();
-        viewIssuePage.chooseEndYear();
-        viewIssuePage.clickApplyFilter();
 
         //Check results
-        assertEquals(viewIssuePage.getIssuesNumber(), "1 - 2 / 2");
-    }
-
-    @Test(priority = 6)
-    public void logout() {
-        loginPage.login("administrator", "rootroot");
-        loginPage.selectMenu(MenuItem.VIEW_ISSUES);
-        viewIssuePage.setPriority();
-        viewIssuePage.setSeverity();
-        viewIssuePage.setStatus();
-        viewIssuePage.filterByDateSubmitted();
-        viewIssuePage.chooseStartDay();
-        viewIssuePage.chooseStartMonth();
-        viewIssuePage.chooseStartYear();
-        viewIssuePage.chooseEndDay();
-        viewIssuePage.chooseEndMonth();
-        viewIssuePage.chooseEndYear();
-        viewIssuePage.clickApplyFilter();
-        assertEquals(viewIssuePage.getIssuesNumber(), "1 - 2 / 2");
-
+        assertEquals(viewIssuePage.getIssuesNumber(), properties.getProperty("viewIssueResults"));
 
         //Logout
-        viewIssuePage.logout();
+        loginPage.logout();
     }
-
-    // TODO Должно быть в базовом классе
-    @AfterMethod(alwaysRun = true)
-    public void closeDriver() {
-
-        // Close driver
-        driver.close();
-    }
-
-
 }

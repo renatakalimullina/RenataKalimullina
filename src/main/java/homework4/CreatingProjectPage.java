@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static org.testng.AssertJUnit.assertEquals;
-
 public class CreatingProjectPage extends AbstractPage {
+
+    @FindBy(xpath = "//button[contains(text(),'Create New Project')]")
+    private WebElement newProjects;
+
 
     @FindBy(xpath = "//tr[1]/td[@class='category']")
     private WebElement name;
@@ -58,20 +60,16 @@ public class CreatingProjectPage extends AbstractPage {
         super(driver);
     }
 
-    //Так как все asserts должны быть на уровне тестов
-    /*public void checkFields() {
+    public void creatingNewProject()
+    {
+        newProjects.click();
+    }
 
-        assertEquals("* Project Name", name.getText());
-        assertEquals("Status", status.getText());
-        assertEquals("Inherit Global Categories", category.getText());
-        assertEquals("View Status", viewStatus.getText());
-        assertEquals("Description", description.getText());
-    }*/
-
-    public void fillInfo()
+    public void fillInfo(String name, String Description)
     {
         // TODO не должно быть данных на уровне PageObjects
-        projectName.sendKeys("Anything");
+        // Исправлено
+        projectName.sendKeys(name);
 
         projectStatusFirst.click();
         projectStatusSecond.click();
@@ -82,12 +80,12 @@ public class CreatingProjectPage extends AbstractPage {
         projectViewStateSecond.click();
 
         // TODO не должно быть данных на уровне PageObjects
-        projectDescription.sendKeys("AnythingAnything");
+        // Исправлено
+        projectDescription.sendKeys(Description);
     }
 
     public void addProject()
     {
         addProject.click();
     }
-
 }

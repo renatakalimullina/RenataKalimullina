@@ -1,13 +1,13 @@
 package homework4.enums;
 
-public enum MenuItem {
+public enum  ManageMenuItem {
 
-    VIEW_ISSUES("View Issues"),
-    MANAGE("Manage");
+    MANAGE_USERS("Manage Users"),
+    MANAGE_PROJECTS("Manage Projects");
 
     private String itemName;
 
-    MenuItem(String itemName) {
+    ManageMenuItem(String itemName) {
         this.itemName = itemName;
     }
 

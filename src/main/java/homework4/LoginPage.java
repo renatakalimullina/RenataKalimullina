@@ -16,6 +16,12 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//input[@value='Login']")
     private WebElement loginButton;
 
+    @FindBy(className = "user-info")
+    private WebElement userInfo;
+
+    @FindBy(xpath = "//a[contains(text(), 'Logout')]")
+    private WebElement logoutButton;
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -34,4 +40,11 @@ public class LoginPage extends AbstractPage {
     public String getLoggedUser() {
         return driver.findElement(By.className("user-info")).getText();
     }
+
+    public void logout()
+    {
+        userInfo.click();
+        logoutButton.click();
+    }
+
 }

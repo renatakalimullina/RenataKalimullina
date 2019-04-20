@@ -1,61 +1,39 @@
 package homework4;
 
+import homework4.enums.ManageMenuItem;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 
 public class ManagePage extends AbstractPage {
 
     // TODO Должно быть сделанно по аналогии с Меню в LeftSideBarElement
-    @FindBy(partialLinkText = "Manage Projects")
-    private WebElement manageProjects;
+    // Исправлено
 
-    @FindBy(xpath = "//button[contains(text(),'Create New Project')]")
-    private WebElement newProjects;
-
-    @FindBy(className = "user-info")
-    private WebElement userInfo;
-
-    @FindBy(xpath = "//a[contains(text(), 'Logout')]")
-    private WebElement logoutButton;
-
-    @FindBy(partialLinkText = "Manage Users")
-    private WebElement manageUsers;
-
-    @FindBy(xpath = "//div[@class='pull-left']")
-    private WebElement newUsers;
-
+    @FindBy(xpath = "//ul[contains(@class, 'tabs')]//li")
+    private List<WebElement> menuItems;
 
     protected ManagePage(WebDriver driver) {
         super(driver);
     }
 
-    public void selectManageProject() {
-
-        manageProjects.click();
+    public void clickManageMenuItem(ManageMenuItem item) {
+        for (WebElement menuItem : menuItems) {
+            if (menuItem.getText().trim().equals(item.getItemName())) {
+                menuItem.click();
+                break;
+            }
+        }
     }
 
-    public void selectManageUsers() {
 
-        manageUsers.click();
-    }
 
-    public void creatingNewProject() {
 
-        newProjects.click();
-    }
 
-    public void creatingNewUsers() {
 
-        newUsers.click();
-    }
-
-    public void logout()
-    {
-        userInfo.click();
-        logoutButton.click();
-    }
 
 
 }

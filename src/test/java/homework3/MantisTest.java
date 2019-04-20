@@ -42,7 +42,7 @@ public class MantisTest {
     }
 
     @Test
-    public void addUser() {
+    public void addProject() {
 
         //Assert Browser title
         assertEquals(driver.getTitle(), "MantisBT");

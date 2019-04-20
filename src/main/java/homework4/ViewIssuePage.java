@@ -210,9 +210,5 @@ public class ViewIssuePage extends AbstractPage{
     }
 
     // TODO Зачем в каждом ПО делать метод logout?
-    public void logout()
-    {
-        userInfo.click();
-        logoutButton.click();
-    }
+    // Исправлено. Вынесла в LoginPage
 }

@@ -5,14 +5,7 @@ import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
 
 
-// TODO Зачем используется приоритезация?
-// TODO В задании было сказанно, что это много тестов?
-// Исправлено
-
 public class CreationIssuesTest extends BaseClassForTests{
-
-    // TODO Должно быть в базовом классе
-    //Исправлено все, что должно быть в базвом классе
 
     @Test
     public void setFilter() {

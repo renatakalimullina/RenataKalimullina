@@ -7,25 +7,14 @@ import static homework4.enums.ManageMenuItem.MANAGE_USERS;
 import static org.testng.AssertJUnit.assertEquals;
 
 
-// TODO Зачем используется приоритезация?
-// TODO В задании было сказанно, что это много тестов?
-// Исправлено
-
 public class AddUserMantisTest extends BaseClassForTests{
-
-    // TODO Должно быть в базовом классе
-    // Исправлено все, что должно быть в базвом классе
 
     @Test
     public void addUser() {
         // Check title
-        // TODO Не должно быть захордкоженных данных
-        // Исправлено
         assertEquals(loginPage.getPageTitle(), properties.getProperty("mainTitleName"));
 
         // Login
-        // TODO пользователь должен быть вынесен в проперти файл
-        // Исправлено
         loginPage.login(properties.getProperty("adminName"), properties.getProperty("adminPassword"));
 
         // Check login

@@ -70,8 +70,6 @@ public class CreatingUsersPage extends AbstractPage  {
         newUsers.click();
     }
 
-    // TODO не должно быть данных на уровне PageObjects
-    // Исправлено
     public void fillInfo(String name, String realName, String email, String password)
     {
         userNameInfo.sendKeys(name);

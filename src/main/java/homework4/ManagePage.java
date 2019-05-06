@@ -10,9 +10,6 @@ import java.util.List;
 
 public class ManagePage extends AbstractPage {
 
-    // TODO Должно быть сделанно по аналогии с Меню в LeftSideBarElement
-    // Исправлено
-
     @FindBy(xpath = "//ul[contains(@class, 'tabs')]//li")
     private List<WebElement> menuItems;
 

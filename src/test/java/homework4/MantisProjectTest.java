@@ -8,14 +8,7 @@ import static homework4.enums.ManageMenuItem.MANAGE_PROJECTS;
 import static org.testng.AssertJUnit.assertEquals;
 
 
-// TODO Зачем используется приоритезация?
-// TODO В задании было сказанно, что это много тестов?
-// Исправлено
-
 public class MantisProjectTest extends BaseClassForTests{
-
-    // TODO Должно быть в базовом классе
-    //Исправлено все, что должно быть в базвом классе
 
     @Test
     public void addProject() {

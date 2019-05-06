@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-// TODO Для каждой страницы должен быть свой PageObject
-// TODO Периписать в HW4
 public class POVoid {
 
     private WebDriver driver;
